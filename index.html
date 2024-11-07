@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html.christmas</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <main>
+      <h1>html.christmas</h1>
+      <p>christmas day for your one page html website.</p>
+      <div class="proofimshitatcss">
+        <div class="codingareasidething">
+          <div class="html">
+            <textarea id="htmlcode" placeholder="type your html code here..." onkeyup="preview()"></textarea>
+          </div>
+        </div>
+        <div class="previewareasidething">
+          <button onclick="openPreview()" id="sigmasharing">share!!</button>
+          <iframe id="realpreviewnovirus"></iframe>
+        </div>
+      </div>
+    </main>    
+    <script>
+      function openPreview() {
+          let html = document.getElementById("htmlcode").value;
+          let urlHtml = encodeURIComponent(html);
+          window.open(`preview.html?code=${urlHtml}`, '_blank');
+      }
+
+      function preview() {
+        let html = document.getElementById("htmlcode").value;
+        let preview = document.getElementById("realpreviewnovirus");
+        preview.contentDocument.body.innerHTML = html;
+    }
+    </script>
+  </body>
+</html>

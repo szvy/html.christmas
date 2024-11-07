@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html.christmas</title>
+  </head>
+  <body>
+    <script>
+      function getQueryParam(param) {
+          let urlParams = new URLSearchParams(window.location.search);
+          return urlParams.get(param);
+      }
+
+      let rawHtml = getQueryParam("code");
+
+      if (rawHtml) {
+          document.body.innerHTML = decodeURIComponent(rawHtml);
+      } else {
+          document.body.innerHTML = 'write some code to get started!! click <a href="/index.html">here</a> to get started!!';
+      }
+    </script>
+  </body>
+</html>
